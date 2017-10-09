@@ -1,0 +1,26 @@
+.main-nav {
+	width: 640px;
+}
+
+.nav-list {
+	list-style: none;
+	font-size: 0;
+	@include reset_mp();
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.nav-list__item {
+	@include veral();
+	margin-right: 45px;
+}
+
+.nav-list__link{
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: $font-size-base;
+	color: $color-text-black;
+}
