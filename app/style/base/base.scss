@@ -12,11 +12,12 @@ html, body {
 }
 
 body {
-  font: $font-regular $font-size-base $font-family-1;
+  font-family: $font-family-1;
+  font-size: $font-size-base;
+  font-weight: $font-regular;
+  line-height: $line-height-base;
   color: $color-text-base;
-}
 
-h1, h2, h3, h4, h5 {
-	font-weight: normal;
+  background-color: $background-color-base;
 }
 
