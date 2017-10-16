@@ -12,3 +12,9 @@
   src: url('../fonts/roboto-bold.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: $font-medium;
+  src: url('../fonts/robotomedium.woff') format('woff');
+}
