@@ -8,5 +8,6 @@ module.exports = [
   './gulp/task/sass.js',
   './gulp/task/img.opt.js',
   './gulp/task/img.sprite.js',
-  './gulp/task/copy.fonts.js'
+  './gulp/task/copy.fonts.js',
+  './gulp/task/js.foundation.js'
 ];

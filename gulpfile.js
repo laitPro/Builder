@@ -7,7 +7,8 @@ var $ = {
     task: require('./gulp/path/path.task'),
     template: require('./gulp/path/path.template'),
     img: require('./gulp/path/path.img.js'),
-    font: require('./gulp/path/path.fonts.js')
+    font: require('./gulp/path/path.fonts.js'),
+    foundation: require('./gulp/path/path.foundation.js')
   },
   gulp: require('gulp'),
   combine: require('stream-combiner2').obj,
@@ -39,10 +40,14 @@ $.gulp.task('default', $.gulp.series(
   ),
   $.gulp.parallel(
     'pug',
-    'sass'
+    'sass',
+    'js.foundation'
   ),
   $.gulp.parallel(
     'watch',
     'serve'
   ) 
 ));
+
+// jQuery.fn.jquery
+// "3.2.1"
