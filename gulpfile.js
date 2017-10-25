@@ -21,7 +21,10 @@ var $ = {
     rename: {
       'gulp-sass-glob': 'sassGlob',
       'gulp.spritesmith' : 'spritesmith',
-      'gulp-replace-task' : 'replace'
+      'gulp-replace-task' : 'replace',
+      'gulp-svg-sprite' : 'svgSprite1',
+      'gulp-svg-sprites' : 'svgSprite2',
+      'gulp-replace': 'replaceStr'
     }
   }),
 };
@@ -37,6 +40,7 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'img.opt',
     'img.sprite',
+    'img.sprite.svg',
     'copy.fonts'
   ),
   $.gulp.parallel(

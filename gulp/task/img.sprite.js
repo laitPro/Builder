@@ -12,7 +12,7 @@ module.exports = function($) {
     var imgStream = spriteData.img
       .pipe($.buffer())
       .pipe($.gp.imagemin())
-      .pipe($.gulp.dest($.config.root + '/imgs/decorate/sprite/'));
+      .pipe($.gulp.dest($.config.root + '/imgs/decorate/sprite/png/'));
 
     var cssStream = spriteData.css
       .pipe($.gulp.dest('./app/style/helpers/'));
