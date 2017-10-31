@@ -3,7 +3,7 @@
 module.exports = function($) {
 	$.gulp.task('sass', function() {
 		return $.combine(
-			$.gulp.src('./app/style/app.scss'),			
+			$.gulp.src('./app/styles/app.scss'),			
 			$.gp.if($.dev, $.gp.sourcemaps.init()),
 			$.gp.sassGlob(),
 			$.gp.sass(),
@@ -21,7 +21,7 @@ module.exports = function($) {
 			$.browserSync.stream()
 		)
 		.on('error', $.gp.notify.onError({
-			title: "Style"
+			title: 'Style'
 		}))
 	})
 }

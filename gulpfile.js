@@ -4,9 +4,9 @@ var $ = {
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
-    task: require('./gulp/path/path.task'),
+    tasks: require('./gulp/path/path.tasks'),
     template: require('./gulp/path/path.template'),
-    img: require('./gulp/path/path.img.js'),
+    imgs: require('./gulp/path/path.imgs.js'),
     fonts: require('./gulp/path/path.fonts.js'),
     foundation: require('./gulp/path/path.foundation.js'),
     app: require('./gulp/path/path.app.js')
@@ -29,7 +29,7 @@ var $ = {
   }),
 };
 
-$.path.task.forEach(function(taskPath) {
+$.path.tasks.forEach(function(taskPath) {
   require(taskPath)($);
 });
 
@@ -39,7 +39,7 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
-    'img.sprite',
+    'img.sprite.png',
     'img.sprite.svg',
     'copy.fonts'
   ),
