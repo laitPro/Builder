@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = {
-	font : './app/fonts/**'	
-}
+module.exports = [
+	'./app/fonts/**'
+]

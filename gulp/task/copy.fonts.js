@@ -2,7 +2,7 @@
 
 module.exports = function($) {
   $.gulp.task('copy.fonts', function () {
-    return $.gulp.src($.path.font.font)
+    return $.gulp.src($.path.fonts)
       .pipe($.gulp.dest($.config.root + '/fonts'));
   });
 };

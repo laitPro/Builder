@@ -1,5 +1,5 @@
 {
-  "name": "Builder",
+  "name": "builder",
   "description": "starter for convert PSD to HTML",
   "main": "index.js",
   "authors": [
