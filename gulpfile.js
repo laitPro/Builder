@@ -7,7 +7,7 @@ var $ = {
     task: require('./gulp/path/path.task'),
     template: require('./gulp/path/path.template'),
     img: require('./gulp/path/path.img.js'),
-    font: require('./gulp/path/path.fonts.js'),
+    fonts: require('./gulp/path/path.fonts.js'),
     foundation: require('./gulp/path/path.foundation.js'),
     app: require('./gulp/path/path.app.js')
   },
