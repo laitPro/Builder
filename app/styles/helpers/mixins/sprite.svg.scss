@@ -1,0 +1,16 @@
+@mixin spriteSvg($icon, $type: all) {
+  @if $type == all {
+    @extend %spriteSvg;
+  }
+
+  $iconMap: icon-svg-attrs($icon);
+
+  @if $type == all or $type == size {
+    width: mq-px2em(map-get($iconMap, width));
+    height: mq-px2em(map-get($iconMap, height));
+  }
+
+  @if $type == all or $type == bg {
+    background-position: mq-px2em(map-get($iconMap, x) - 5) mq-px2em(map-get($iconMap, y) - 5);
+  }
+}

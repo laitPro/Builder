@@ -1,12 +1,15 @@
 // ------------------------------------------
 // Helpers
 //-------------------------------------------
+@import 'helpers/sprite.svg';
+@import 'helpers/sprite.png';
 
 @import 'helpers/variables';
+
 @import 'helpers/functions/**/*';
-@import 'helpers/mixins/**/*';
 @import 'helpers/placeholders';
-@import 'helpers/sprite';
+@import 'helpers/mixins/**/*';
+
 
 // ------------------------------------------
 // Vendors

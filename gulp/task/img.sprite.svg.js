@@ -2,24 +2,31 @@
 
 module.exports = function($) {
   $.gulp.task('img.sprite.svg', function () {
-    return $.gulp.src($.path.imgs.decorate_svg)
-      .pipe($.gp.svgmin({
-        js2svg: {
-          pretty: true
+    return $.gulp.src($.path.imgs.svg_sprites)
+      .pipe($.gp.svgSprite1({
+        shape: {
+          spacing: {
+            padding: 5
+          }
+        },
+        mode: {
+          css: {
+            dest: "./",  /*кладем в корень папки '$.config.root' */
+            layout: "diagonal",
+            sprite: "imgs/sprite.svg",
+            bust: false,
+            render: {
+              scss: {
+                dest: '../app/styles/helpers/sprite.svg.scss', //относительный путь
+                template: "app/tpl/sprite-template.scss" //от корня gulpfile.js
+              }
+            }
+          }
+        },
+        variables: {
+          mapname: "icons"
         }
       }))
-      .pipe($.gp.svgSprite2({
-        mode: "symbols",
-        preview: false
-      }))
-      .pipe($.gp.cheerio({
-        run: function ($) {
-          $('svg').attr('style', 'display:none');   
-        },
-        parserOptions: {xmlsMode: true}
-      }))
-      .pipe($.gp.replaceStr('&gt;', '>'))
-      .pipe($.gp.rename('symbols.svg.pug'))
-      .pipe($.gulp.dest('./app/template/blocks/'));
+      .pipe($.gulp.dest($.config.root));
     });
 }

@@ -41,6 +41,7 @@ $.gulp.task('default', $.gulp.series(
     'img.opt',
     'img.sprite.png',
     'img.sprite.svg',
+    'img.symbols.svg',
     'copy.fonts'
   ),
   $.gulp.parallel(
