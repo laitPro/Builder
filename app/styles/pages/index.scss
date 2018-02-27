@@ -1,7 +1,7 @@
 // Пример использования svg спрайтов
 .tw {
 	margin: 0;
-  font-size: 16px;
+  font-size: 32px;
   
   &:before {
     @include spriteSvg(twitter);
