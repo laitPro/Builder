@@ -1,0 +1,27 @@
+@function mq-px2em($px, $base-font-size: $font-size-base) {
+    @if unitless($px) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+        @return mq-px2em($px + 0px); // That may fail.
+    } @else if unit($px) == em {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1em;
+}
+
+@function sprite-svg-attr($icon, $attr) {
+    $newIcon: map-get($icons, $icon);
+    @if $newIcon == null {
+        @warn "Can't find an icon with the name #{$icon}";
+    }
+    @return map-get($newIcon, $attr);
+}
+
+@function icon-svg-attrs($icon) {
+    $attrs: (
+        width: sprite-svg-attr($icon, width),
+        height: sprite-svg-attr($icon, height),
+        x: sprite-svg-attr($icon, backgroundX),
+        y: sprite-svg-attr($icon, backgroundY)
+    );
+    @return $attrs;
+}

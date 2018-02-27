@@ -3,10 +3,14 @@
 module.exports = function($) {
   $.gulp.task('img.png.sprite', function(cb) {
 
-    var spriteData = $.gulp.src($.path.imgs.decorate_png).pipe($.gp.spritesmith({
+    var spriteData = $.gulp.src($.path.imgs.png_sprites).pipe($.gp.spritesmith({
       imgName: 'sprite.png',
       cssName: 'sprite.png.scss',
+<<<<<<< HEAD:gulp/task/img.png.sprite.js
       imgPath: '../imgs/decorate/sprite.png' //img path in scss file
+=======
+      imgPath: '../imgs/decorate/sprite/sprite.png' //img path in scss file
+>>>>>>> dev:gulp/task/img.sprite.png.js
     }));
  
     var imgStream = spriteData.img
