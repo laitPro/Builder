@@ -39,14 +39,9 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
-<<<<<<< HEAD
-    'img.png.sprite',
-    'img.svg.symbols',
-=======
     'img.sprite.png',
     'img.sprite.svg',
     'img.symbols.svg',
->>>>>>> dev
     'copy.fonts'
   ),
   $.gulp.parallel(
