@@ -1,4 +1,7 @@
-node_modules
-build
-bower_components
-.DS_Store
+/build/
+/bower_components/
+/.git/
+/node_modules/
+/**/package-lock.json
+/**/Thumbs.db
+/**/*.DS_Store
