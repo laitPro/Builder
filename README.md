@@ -1,5 +1,16 @@
 # Builder
 
-It is start point for convert PSD to HTML
+Стартовый HTML шаблон для верстки сайтов.
+Автоматизация сборки реализована за счет таск менеджера Gulp.
 
-More info about it in process...
+Автор: [Лайтинен Никита](http://lait.pro)
+
+## Задачи
+  - Описать структуру проекта
+  - Используемые плагины и технологии
+  - Переход на Webpack
+
+License
+----
+
+MIT
