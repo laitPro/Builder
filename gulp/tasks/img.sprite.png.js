@@ -6,7 +6,9 @@ module.exports = function($) {
     var spriteData = $.gulp.src($.path.imgs.png_sprites).pipe($.gp.spritesmith({
       imgName: 'sprite.png',
       cssName: 'sprite.png.scss',
-      imgPath: '../imgs/decorate/sprite/sprite.png' //img path in scss file
+      // img path in scss file
+      // that means the way from css to img file in build folder
+      imgPath: '../imgs/decorate/sprite/sprite.png'
     }));
  
     var imgStream = spriteData.img

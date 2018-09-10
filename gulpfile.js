@@ -2,6 +2,7 @@
 
 var $ = {
   dev : true,
+  modern: true,
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
@@ -38,8 +39,8 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
-    'img.sprite.png',
-    'img.sprite.svg',
+    cb => {if (!$.modern) $.gulp.run('img.sprite.png'); cb()},
+    cb => {if (!$.modern) $.gulp.run('img.sprite.svg'); cb()},
     'img.symbols.svg',
     'copy.fonts'
   ),
