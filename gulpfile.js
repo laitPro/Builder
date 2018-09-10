@@ -1,6 +1,7 @@
 'use strict';
 
 var $ = {
+  dev : true,
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
@@ -29,11 +30,9 @@ var $ = {
   }),
 };
 
-$.path.tasks.forEach(function(taskPath) {
-  require(taskPath)($);
-});
-
-$.dev = true;
+// TASKS
+// ------
+$.path.tasks.forEach(taskPath =>  require(taskPath)($));
 
 $.gulp.task('default', $.gulp.series(
   'clean',
