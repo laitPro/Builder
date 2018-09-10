@@ -17,6 +17,9 @@ module.exports = function($) {
       $.gp.replace({ patterns: patterns, usePrefix: false }),
       $.gulp.dest($.config.root)
     )
-    .on('error', $.gp.notify.onError({ title: 'Pug' }));   
+    .on('error', $.gp.notify.onError(error => ({
+      title: 'Pug',
+      message: error.message
+    })));
   });
 };
