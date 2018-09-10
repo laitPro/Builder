@@ -20,8 +20,9 @@ module.exports = function($) {
 			$.gulp.dest($.config.root + '/css'),
 			$.browserSync.stream()
 		)
-		.on('error', $.gp.notify.onError({
-			title: 'Style'
-		}))
-	})
-}
+		.on('error', $.gp.notify.onError(error => ({
+      title: 'Sass',
+      message: error.message
+    })));
+	});
+};
