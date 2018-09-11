@@ -8,6 +8,6 @@ module.exports = function($) {
     	}),
     	$.gp.imagemin({optimizationLevel: 5}),
 		$.gulp.dest($.config.root + '/imgs/content/')
-    )
+    );
   });
 };

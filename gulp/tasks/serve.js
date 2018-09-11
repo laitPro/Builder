@@ -5,6 +5,7 @@ module.exports = function($) {
 		$.browserSync.init({
 			open: true,
 			server: $.config.root
+			// proxy: 'lait.pro'
 		});
 		$.browserSync.watch([$.config.root + '/**/*.*', '!**/*.css'], $.browserSync.reload);
 	})

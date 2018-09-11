@@ -22,9 +22,7 @@ var $ = {
   gp: require('gulp-load-plugins')({
     rename: {
       'gulp-sass-glob': 'sassGlob',
-      'gulp.spritesmith' : 'spritesmith',
       'gulp-replace-task' : 'replace',
-      'gulp-svg-sprite' : 'svgSprite1',
       'gulp-svg-sprites' : 'svgSprite2',
       'gulp-replace': 'replaceStr'
     }
@@ -39,8 +37,6 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
-    cb => {if (!$.modern) $.gulp.run('img.sprite.png'); cb()},
-    cb => {if (!$.modern) $.gulp.run('img.sprite.svg'); cb()},
     'img.symbols.svg',
     'copy.fonts'
   ),
