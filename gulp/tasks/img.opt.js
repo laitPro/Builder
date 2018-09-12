@@ -6,7 +6,7 @@ module.exports = function($) {
     	$.gulp.src($.path.imgs.content, {
     		since: $.gulp.lastRun('img.opt')
     	}),
-    	$.gp.imagemin({optimizationLevel: 5}),
+    	$.gp.cache($.gp.imagemin({optimizationLevel: 5})),
 		$.gulp.dest($.config.root + '/imgs/content/')
     );
   });
