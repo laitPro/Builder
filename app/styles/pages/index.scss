@@ -1,5 +1,11 @@
-// Пример использования svg symbols
-.svg-icon {
-  width: 100px;
-  height: 100px;
+// Пример использования иконки
+.icon_cart {
+  font-size: 30px;
+
+  &_red {
+    color: red;
+  }
 }
+
+
+  

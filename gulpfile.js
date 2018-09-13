@@ -23,7 +23,7 @@ var $ = {
     rename: {
       'gulp-sass-glob': 'sassGlob',
       'gulp-replace-task' : 'replace',
-      'gulp-svg-sprites' : 'svgSprite2',
+      'gulp-svg-sprite' : 'svgSprite',
       'gulp-replace': 'replaceStr'
     }
   }),
@@ -37,7 +37,7 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
-    'img.symbols.svg',
+    'sprite.svg',
     'copy.fonts'
   ),
   $.gulp.parallel(

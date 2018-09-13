@@ -13,7 +13,7 @@ html, body {
 
 body {
   font-family: $font-family-1;
-  // font-size: $font-size-base;
+  font-size: $font-size-base;
   font-weight: $font-regular;
   line-height: $line-height-base;
   color: $color-text-base;
@@ -24,5 +24,11 @@ body {
 img {
   max-width: 100%;
   max-height: inherit;
+}
+
+// Общий стиль иконок
+.icon {
+  display: inline-block;
+  vertical-align: top;
 }
 
