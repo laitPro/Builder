@@ -15,6 +15,9 @@ module.exports = function($) {
     };
 
     const svgSpriteConfig = {
+      svg: { // General options for created SVG files
+        xmlDeclaration: false, // Add XML declaration to SVG sprite
+      },
       mode: {
         symbol: {
           sprite: "sprite.svg.pug",
@@ -29,6 +32,8 @@ module.exports = function($) {
       }
     };
     
+    const output = './app/template/blocks/';
+
     return $.gulp.src($.path.imgs.svg_symbols)
       .pipe($.gp.svgmin(svgminConfig))
       .pipe($.gp.svgSprite(svgSpriteConfig))
@@ -37,6 +42,6 @@ module.exports = function($) {
       // // cheerio plugin create unnecessary string '&gt;', so replace it.
       .pipe($.gp.replaceStr('&gt;', '>'))
       // build svg sprite
-      .pipe($.gulp.dest('./app/template/blocks/'));
+      .pipe($.gulp.dest(output));
     });
 }
