@@ -1,5 +1,5 @@
-%clearfix:after {
-  content: ' ';
-  display: table;
-  clear: both;
+%spriteSvg {
+  display: inline-block;
+  background-image: url(map-get($spriteSvg, svgPath));
+  background-size: mq-px2em(map-get($spriteSvg, width)) mq-px2em(map-get($spriteSvg, height));
 }

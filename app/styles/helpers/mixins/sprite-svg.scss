@@ -1,0 +1,23 @@
+@mixin spriteSvg($icon, $per: 1, $type: all) {
+  @if $type == all {
+    // @extend %spriteSvg;
+    display: inline-block;
+    background-image: url(map-get($spriteSvg, svgPath));
+    background-size: mq-px2em(map-get($spriteSvg, width) * $per) mq-px2em(map-get($spriteSvg, height) * $per);
+    // background-size: (map-get($spriteSvg, width) * $per) (map-get($spriteSvg, height) * $per);
+  }
+
+  $iconMap: icon-svg-attrs($icon);
+
+  @if $type == all or $type == size {
+    width: mq-px2em(map-get($iconMap, width) * $per);
+    // width: (map-get($iconMap, width)) * $per;
+    height: mq-px2em(map-get($iconMap, height) * $per);
+    // height: (map-get($iconMap, height)) * $per;
+  }
+
+  @if $type == all or $type == bg {
+    background-position: mq-px2em((map-get($iconMap, x) - 5)* $per) mq-px2em((map-get($iconMap, y) - 5)* $per);
+    // background-position: (map-get($iconMap, x) - 5) * $per (map-get($iconMap, y) - 5) * $per;
+  }
+}

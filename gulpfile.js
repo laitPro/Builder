@@ -37,6 +37,7 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'img.opt',
+    'symbols.svg',
     'sprite.svg',
     'copy.fonts'
   ),

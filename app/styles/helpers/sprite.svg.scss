@@ -1,15 +1,4 @@
-.icon__svg {
-	display: block;
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
-}
-
-.icon__svg_cart {
-	font-size:(15/10)*1rem;
-	width:(15/15)*1em;
-}
-.icon__svg_facebook {
-	font-size:(22/10)*1rem;
-	width:(10/22)*1em;
-}
+$icons: (
+  sprite: (width: 20px, height: 32px, svgPath: '../imgs/sprite.svg'),
+ 	facebook: (width: 10px, height: 22px, backgroundX: 0px, backgroundY: 0px),
+);

@@ -7,5 +7,19 @@
   }
 }
 
+.icon_svg {
+  padding-left: 30px;
+  position: relative;
+  font-size: 16px;
+
+  &:before {
+    content: '';
+    @include centered(y);
+    left: 0;
+    @include spriteSvg(facebook,1);
+  }
+  
+}
+
 
   

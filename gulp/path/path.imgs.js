@@ -1,4 +1,5 @@
 module.exports = {
 	content: './app/imgs/content/*.*',
-	svg_symbols: './app/imgs/decorate/svg-symbols/*.svg'
+	svgSymbols: './app/imgs/decorate/svg-symbols/*.svg',
+	svg: './app/imgs/decorate/svg/*.svg'
 };
