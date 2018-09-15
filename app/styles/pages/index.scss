@@ -1,4 +1,4 @@
-// Пример использования иконки
+// Пример использования иконки symbols
 .icon_cart {
   font-size: 30px;
 
@@ -7,10 +7,11 @@
   }
 }
 
-.icon_svg {
+// Пример использования sprite svg
+.icon_facebook {
   padding-left: 30px;
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
 
   &:before {
     content: '';
@@ -18,8 +19,10 @@
     left: 0;
     @include spriteSvg(facebook,1);
   }
-  
 }
 
-
+// Пример использования sprite png
+.icon_example {
+  @include sprite($example);
+}
   

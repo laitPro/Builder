@@ -7,5 +7,6 @@ module.exports = function($) {
 		$.gulp.watch('./app/styles/**/*.scss', $.gulp.series('sass'));
 		$.gulp.watch('./app/imgs/decorate/svg-symbols/*', $.gulp.series('symbols.svg'));
 		$.gulp.watch('./app/imgs/decorate/svg/*', $.gulp.series('sprite.svg'));
+		$.gulp.watch('./app/imgs/decorate/png/*', $.gulp.series('sprite.png'));
 	})
 }

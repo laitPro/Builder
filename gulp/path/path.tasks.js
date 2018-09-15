@@ -5,6 +5,7 @@ module.exports = [
   './gulp/tasks/img.opt.js',
   './gulp/tasks/symbols.svg.js',
   './gulp/tasks/sprite.svg.js',
+  './gulp/tasks/sprite.png.js',
   './gulp/tasks/clean.js',
   './gulp/tasks/sass.js',
   './gulp/tasks/pug.js',

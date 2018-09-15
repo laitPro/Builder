@@ -13,7 +13,7 @@ module.exports = function($) {
           css: {
             dest: "./",  /*кладем в корень папки '$.config.root' */
             layout: "diagonal",
-            sprite: "imgs/sprite.svg",
+            sprite: "imgs/decorate/sprite.svg",
             bust: false,
             render: {
               scss: {
