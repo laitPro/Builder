@@ -34,6 +34,8 @@
     "gulp.spritesmith": "^6.9.0",
     "rimraf": "^2.6.1",
     "stream-combiner2": "^1.1.1",
-    "vinyl-buffer": "^1.0.0"
+    "vinyl-buffer": "^1.0.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
   }
 }

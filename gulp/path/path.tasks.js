@@ -12,5 +12,6 @@ module.exports = [
   './gulp/tasks/watch.js',
   './gulp/tasks/serve.js',
   './gulp/tasks/js.foundation.js',
-  './gulp/tasks/js.process.js'
+  './gulp/tasks/js.process.js',
+  './gulp/tasks/webpack.js'
 ];

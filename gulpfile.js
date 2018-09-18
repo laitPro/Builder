@@ -47,7 +47,8 @@ $.gulp.task('default', $.gulp.series(
     'pug',
     'sass',
     'js.foundation',
-    'js.process'
+    'js.process',
+    'webpack'
   ),
   $.gulp.parallel(
     'watch',
