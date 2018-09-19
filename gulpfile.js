@@ -19,6 +19,7 @@ var $ = {
   browserSync: require('browser-sync').create(),
   fs: require('fs'),
   buffer: require('vinyl-buffer'),
+  log: require('fancy-log'),
   gp: require('gulp-load-plugins')({
     rename: {
       'gulp-sass-glob': 'sassGlob',
@@ -48,7 +49,7 @@ $.gulp.task('default', $.gulp.series(
     'sass',
     'js.foundation',
     'js.process',
-    'webpack'
+    'webpack:app'
   ),
   $.gulp.parallel(
     'watch',

@@ -10,6 +10,8 @@ const config = {
 
   context: input,
 
+  mode : 'development',
+
   entry: {
     app: './app.js',
   },
