@@ -10,7 +10,7 @@ const config = {
 
   context: input,
 
-  mode : 'development',
+  mode : dev ? 'development' : 'production',
 
   entry: {
     app: './app.js',
@@ -19,8 +19,27 @@ const config = {
   output: {
     path: output,
     filename: '[name].js'
-  }
+  },
 
+  watch: dev,
+
+  watchOptions: {
+    aggregateTimeout: 100
+  },
+
+  devtool: dev ? 'inline-source-map' : undefined,
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  }
 }
 
 module.exports = config;

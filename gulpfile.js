@@ -1,5 +1,7 @@
 'use strict';
 
+global.dev = false;
+
 var $ = {
   dev : true,
   modern: true,
