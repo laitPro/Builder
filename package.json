@@ -1,11 +1,18 @@
 {
-  "name": "starter",
+  "name": "builder",
   "version": "1.0.0",
-  "description": "starter for convert PSD to HTML",
-  "main": "index.js",
+  "description": "convert PSD to HTML easy",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp",
+    "build": "gulp build"
   },
+  "keywords": [
+    "webpack",
+    "es6",
+    "ecmascript",
+    "sass",
+    "gulp"
+  ],
   "author": "Nikita Laitinen",
   "license": "ISC",
   "devDependencies": {

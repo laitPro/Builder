@@ -2,11 +2,11 @@ include ../helpers/mixins/icon
 include ../helpers/mixins/navLink
 
 doctype html
-html
+html(lang='ru')
   block sharedVars
-  include ../modules/_head
+  include ../modules/head
   body
     include ../blocks/symbols.svg.pug
     .wrapper
       block content
-    include ../modules/_scripts
+    include ../modules/scripts

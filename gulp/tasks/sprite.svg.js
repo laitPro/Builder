@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($) {
+module.exports = function() {
   $.gulp.task('sprite.svg', function () {
     return $.gulp.src($.path.imgs.svg)
       .pipe($.gp.svgSprite({

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($) {
+module.exports = function() {
   $.gulp.task('sprite.png', function(cb) {
 
     const spriteConfig = {

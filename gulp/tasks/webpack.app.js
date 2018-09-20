@@ -2,7 +2,7 @@
 
 const webpack = require('webpack');
 
-module.exports = function($) {
+module.exports = function() {
 	$.gulp.task('webpack:app', function(cb) {
 
     const config = require(`${process.cwd()}/webpack/webpack.config.js`);

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($) {
+module.exports = function() {
   $.gulp.task('copy.fonts', function () {
     return $.gulp.src($.path.fonts)
       .pipe($.gulp.dest($.config.root + '/fonts'));

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($) {
+module.exports = function() {
   $.gulp.task('img.opt', function() {
     return $.combine(
     	$.gulp.src($.path.imgs.content),

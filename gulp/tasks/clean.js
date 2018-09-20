@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = function($) {
-	$.gulp.task('clean', function(cb) {
-		return $.rimraf($.config.root, cb);	
-	});
+module.exports = () => {
+  $.gulp.task('clean', (cb) => {
+    return $.rimraf($.config.root, cb);	
+  });
 };

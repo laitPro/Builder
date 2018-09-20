@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function($) {
+module.exports = function() {
   $.gulp.task('symbols.svg', function () {
     const svgminConfig = { js2svg: { pretty: true } };
 

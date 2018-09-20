@@ -1,15 +1,15 @@
 'use strict';
 
-module.exports = function($) {
+module.exports = function() {
   var patterns = [];
 
   $.gulp.task('pug', function() {
 
-    patterns.push({match: '%=suffix=%', replace: dev ? '' : '.min'});
-    patterns.push({ match: '%=version=%', replace: dev ? '' : `.${pack.version}`});
+    patterns.push({match: '%=suffix=%', replace: $.dev ? '' : '.min'});
+    patterns.push({ match: '%=version=%', replace: $.dev ? '' : `.${$.hash}`});
 
     return $.combine(
-      $.gulp.src($.path.template, {since: $.gulp.lastRun('pug')}),
+      $.gulp.src($.path.template),
       $.gp.pug({
         locals : JSON.parse($.fs.readFileSync('./content.json', 'utf8')),
         pretty: true

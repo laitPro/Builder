@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function($) {
+module.exports = function() {
 	$.gulp.task('sass', function() {
 		return $.combine(
 			$.gulp.src('./app/styles/app.scss'),			
@@ -14,7 +14,7 @@ module.exports = function($) {
 			$.gp.if(!$.dev, $.combine(
 				$.gp.csso(),
 				$.gp.rename({
-					suffix: '.min'
+					suffix: `.${$.hash}.min`
 				})
 			)),
 			$.gulp.dest($.config.root + '/css'),

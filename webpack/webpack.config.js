@@ -11,7 +11,7 @@ const config = {
 
   context: input,
 
-  mode : dev ? 'development' : 'production',
+  mode : $.dev ? 'development' : 'production',
 
   entry: {
     app: './app.js',
@@ -19,16 +19,16 @@ const config = {
 
   output: {
     path: output,
-    filename: dev ? '[name].js' : `[name].${pack.version}.min.js`,
+    filename: $.dev ? '[name].js' : `[name].${$.hash}.min.js`,
   },
 
-  watch: dev,
+  watch: $.dev,
 
   watchOptions: {
     aggregateTimeout: 100
   },
 
-  devtool: dev ? 'inline-source-map' : undefined,
+  devtool: $.dev ? 'inline-source-map' : undefined,
 
   module: {
     rules: [
@@ -42,7 +42,7 @@ const config = {
     ]
   },
 
-  optimization: !dev ? {
+  optimization: !$.dev ? {
     minimizer: [new UglifyJsPlugin({
       // cache: true,
       parallel: true,

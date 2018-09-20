@@ -11,7 +11,6 @@ global.$ = {
     template: require('./gulp/path/path.template'),
     imgs: require('./gulp/path/path.imgs.js'),
     fonts: require('./gulp/path/path.fonts.js'),
-    foundation: require('./gulp/path/path.foundation.js'),
     app: require('./gulp/path/path.app.js')
   },
   gulp: require('gulp'),
@@ -57,7 +56,11 @@ $.gulp.task('default', $.gulp.series(
 ));
 
 $.gulp.task('build', $.gulp.series(
-  cb => {$.dev = false; cb()},
+  cb => {
+    $.dev = false; 
+    $.hash = [...Array(5)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
+    cb();
+  },
   'clean',
   $.gulp.parallel(
     'img.opt',
