@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const input = path.join(process.cwd(), './app/js/');
 const output = path.join(process.cwd(), 'build', '/js');
@@ -18,7 +19,7 @@ const config = {
 
   output: {
     path: output,
-    filename: '[name].js'
+    filename: dev ? '[name].js' : `[name].${pack.version}.min.js`,
   },
 
   watch: dev,
@@ -39,7 +40,25 @@ const config = {
         }
       }
     ]
-  }
+  },
+
+  optimization: !dev ? {
+    minimizer: [new UglifyJsPlugin({
+      // cache: true,
+      parallel: true,
+      uglifyOptions: {
+        compress: {
+          inline: false,
+          warnings: false,
+          drop_console: true,
+          unsafe: true
+        },
+        ecma: 6,
+      },
+      sourceMap: true
+    })]
+  } : {}
+
 }
 
 module.exports = config;

@@ -1,6 +1,7 @@
 'use strict';
 
 global.dev = false;
+global.pack = require('./package.json');
 
 var $ = {
   dev : true,
