@@ -1,11 +1,9 @@
 'use strict';
 
-global.dev = false;
-global.pack = require('./package.json');
-
-var $ = {
+// PROJECT
+// ------
+global.$ = {
   dev : true,
-  modern: true,
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
@@ -36,7 +34,7 @@ var $ = {
 
 // TASKS
 // ------
-$.path.tasks.forEach(taskPath =>  require(taskPath)($));
+$.path.tasks.forEach(taskPath =>  require(taskPath)());
 
 $.gulp.task('default', $.gulp.series(
   'clean',
@@ -50,12 +48,27 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'pug',
     'sass',
-    'js.foundation',
-    'js.process',
     'webpack:app'
   ),
   $.gulp.parallel(
     'watch',
     'serve'
   ) 
+));
+
+$.gulp.task('build', $.gulp.series(
+  cb => {$.dev = false; cb()},
+  'clean',
+  $.gulp.parallel(
+    'img.opt',
+    'symbols.svg',
+    'sprite.svg',
+    'sprite.png',
+    'copy.fonts'
+  ),
+  $.gulp.parallel(
+    'pug',
+    'sass',
+    'webpack:app'
+  )
 ));

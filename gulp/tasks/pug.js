@@ -5,8 +5,8 @@ module.exports = function($) {
 
   $.gulp.task('pug', function() {
 
-    patterns.push({match: '%=suffix=%', replace: $.dev ? '' : '.min'});
-    patterns.push({ match: '%=version=%', replace: $.dev ? '' : '?rel=' + $.package.version});
+    patterns.push({match: '%=suffix=%', replace: dev ? '' : '.min'});
+    patterns.push({ match: '%=version=%', replace: dev ? '' : `.${pack.version}`});
 
     return $.combine(
       $.gulp.src($.path.template, {since: $.gulp.lastRun('pug')}),
