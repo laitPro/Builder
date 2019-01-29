@@ -25,3 +25,27 @@
     );
     @return $attrs;
 }
+
+/// Convert a px value to rem
+/// @param {px} $val - The desired px size
+/// @param {px} $ctx [$base-font-size] - The base px size
+/// @return {rem} The px value in rem
+@function rem($val, $ctx: $font-size-base) {
+
+  //make sure the divider is not 0
+  @if $ctx == 0 {
+    @error 'sass-rems: Context cannot be `0`.';
+  }
+  //return a unit less 0 (best practice)
+  @if $val == 0 {
+    @return 0
+  }
+  @if (unit($val) != 'px' or unit($val) != 'px') {
+    @error 'sass-rems: Units must be `px`.';
+  }
+  @return ($val / $ctx) * 1rem;
+}
+
+@function em($val, $ctx) {
+    @return #{$val/$ctx}em;
+}
