@@ -5,7 +5,8 @@
 global.$ = {
   dev : true,
   package: require('./package.json'),
-  config: require('./gulp/config'),
+  config: require('./gulp/config/config'),
+  html: require('./gulp/config/favicons/html.json'),
   path: {
     tasks: require('./gulp/path/path.tasks'),
     template: require('./gulp/path/path.template'),
@@ -20,6 +21,7 @@ global.$ = {
   fs: require('fs'),
   buffer: require('vinyl-buffer'),
   log: require('fancy-log'),
+  favicons : require("favicons").stream,
   gp: require('gulp-load-plugins')({
     rename: {
       'gulp-sass-glob': 'sassGlob',
@@ -42,7 +44,8 @@ $.gulp.task('default', $.gulp.series(
     'symbols.svg',
     'sprite.svg',
     'sprite.png',
-    'copy.fonts'
+    'copy.fonts',
+    'favicons'
   ),
   $.gulp.parallel(
     'pug',
