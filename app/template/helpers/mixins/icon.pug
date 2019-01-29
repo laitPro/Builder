@@ -1,5 +1,5 @@
 mixin icon(name, mod)
 	- mod = mod || ''
-	i(class="icon icon_" + name class="icon_" + name + "_" + mod)
+	i(class="icon icon_" + name class=mod)
 		svg(class="icon__svg")
 			use(xlink:href="#" + name)

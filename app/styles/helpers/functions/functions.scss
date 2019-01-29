@@ -40,6 +40,7 @@
   @if $val == 0 {
     @return 0
   }
+  //make sure units are in px
   @if (unit($val) != 'px' or unit($val) != 'px') {
     @error 'sass-rems: Units must be `px`.';
   }
