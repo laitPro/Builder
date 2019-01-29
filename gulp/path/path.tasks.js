@@ -11,5 +11,6 @@ module.exports = [
   './gulp/tasks/pug.js',
   './gulp/tasks/watch.js',
   './gulp/tasks/serve.js',
-  './gulp/tasks/webpack.app.js'
+  './gulp/tasks/webpack.app.js',
+  './gulp/tasks/favicons.js'
 ];
