@@ -11,14 +11,27 @@ html, body {
   margin: 0;
 }
 
-body {
+.no-scroll {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+html, body {
   font-family: $font-family-1;
   font-size: $font-size-base;
+  font-size: 16px;
   font-weight: $font-regular;
   line-height: $line-height-base;
   color: $color-text-base;
 
   background-color: $background-color-base;
+
+  @include respond-to($media-phone-large) {
+    font-size: 15px;
+  }
 }
 
 img {
@@ -28,7 +41,47 @@ img {
 
 // Общий стиль иконок
 .icon {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
 }
 
+.outline {
+  outline: 1px solid red;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+
+  padding: em(18px, 16px) em(30px, 16px);
+
+  font-size: rem(16px);
+  font-weight: $font-semibold;
+  line-height: 1;
+  text-decoration: none;
+  color: $color-text-base;
+
+  background: $background-color-gold;
+  border-radius: em(10px, 16px);
+
+  box-shadow: 4px 4px 10px 0px rgba(black, .14);
+
+  &:hover {
+    cursor: pointer;
+
+    background: $background-color-gold-hover;
+    box-shadow: 2px 2px 10px 0px rgba(black, .14);
+  }
+
+  &:active {
+    background: $background-color-gold-active;
+    box-shadow: 2px 2px 10px 0px rgba(black, .14);
+  }
+
+  @include respond-to(550px) { 
+    font-size: 15px;
+  }
+
+  @include respond-to($media-phone-large) { 
+    font-size: 14px;
+  }
+}
